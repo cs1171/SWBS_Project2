@@ -39,7 +39,6 @@ session_start();
         $password = $conn->real_escape_string(md5($_POST["pw"]));
 
         $query = $conn->query("SELECT * FROM db WHERE uname = '$username' AND pass = '$password'");
-        
     }
     ?>
 </form>
