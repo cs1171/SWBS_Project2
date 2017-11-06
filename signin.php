@@ -1,52 +1,37 @@
 <?php
 session_start();
-?>
+$error = "";
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Main Page</title>
-    <style>
-        label {
-            display: inline-block;
-            width: 140px;
-            text-align: right;
-        }​
-    </style>
-</head>
-<body>
-<form action="mainpage.php">
-    <div class="container">
-        <label><b>Username:</b></label>
-        <input type="text" name="un" required>
-        <br>
-        <label><b>Password: </b></label>
-        <input type="text" name="pw" required>
-
-        <button type="submit">Sign in</button>
-    </div>
-    <?php
-    $conn = new mysqli("localhost", "admin", "secret", "world");
-
-    if (mysqli_connect_errno()) {
-        printf("Connection to database failed: %s\n", mysqli_connect_error());
-        exit();
+if(isset($_POST['submit'])) {
+    if(empty($_POST['un']) || empty($_POST['pw'])) {
+        $error = "Invalid login information.";
     }
+    else {
+        $username = $_POST['un'];
+        $password = $_POST['pw'];
 
-    if(isset($_POST["un"], $_POST["pw"])) {
+        $conn = new mysqli("earth.cs.utep.edu", "cdsoto2", "Blahblah22", "cdsoto2");
+
         $username = $conn->real_escape_string($_POST["un"]);
-        $password = $conn->real_escape_string(md5($_POST["pw"]));
+        $password = $conn->real_escape_string($_POST["pw"]);
 
-        $query = $conn->query("SELECT * FROM db WHERE uname = '$username' AND pass = '$password'");
+        $db = $conn->select_db("cdsoto2");
+        $query = $conn->query("select * from account where user_name = '$username' AND password = '$password'");
+        $rows = mysqli_num_rows($query);
+        $query="SELECT * FROM account WHERE acct_type = '".$acct_type."'";
+
+        if($rows == 1) {
+            $_SESSION['login'] = $username;
+
+            if ($acct_type == 1)
+                header("location: admin.php");
+            else
+                header("location: user.php");
+        }
+        else
+            $error = "Invalid login information.";
+
+        mysqli_close($conn);
     }
-    ?>
-</form>
-<br><br>
-This is the sign in page. Go ahead and try it, or click one of the links.
-<br><br>
-<a href="mainpage.php"><u>Main page</u></a>
-<a href="admin.php"><u>Admin page</u></a>
-<a href="user.php"><u>User page</u></a>
-</body>
-</html>
+}
+?>
