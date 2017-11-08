@@ -3,5 +3,5 @@
 sleep(1);
 session_start();
 session_destroy();
-header('Location: mainpage.php');
+header('Location: /cdsoto2/project2folder/mainpage.php');
 ?>

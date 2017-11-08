@@ -36,9 +36,9 @@ This is the main page. Just imagine that there is interesting stuff here.<br>
 <br><br>
 <?php // should only show sign out link if user is signed in
 if(isset($_SESSION['login'])) { ?>
-    <a href="logout.php"><u>Sign out</u></a>
+    <a href="/cdsoto2/project2folder/logout.php"><u>Sign out</u></a>
 <?php } ?>
-    <a href="admin.php"><u>Admin page</u></a>
-    <a href="user.php"><u>User page</u></a>
+    <a href="/cdsoto2/project2folder/admin.php"><u>Admin page</u></a>
+    <a href="/cdsoto2/project2folder/user.php"><u>User page</u></a>
 </body>
 </html>

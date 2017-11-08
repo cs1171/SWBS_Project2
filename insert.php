@@ -36,6 +36,6 @@ if(mysqli_query($conn, $query)) {
 }
 mysqli_close($conn);
 
-echo "<script>location.href='admin.php';</script>";
+echo "<script>location.href='/cdsoto2/project2folder/admin.php';</script>";
 
 ?>

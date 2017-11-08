@@ -68,9 +68,9 @@ echo "
 
  // should only show sign out link if user is signed in
 if(isset($_SESSION['login'])) { ?>
-    <a href="logout.php"><u>Sign out</u></a>
+    <a href="/logout.php"><u>Sign out</u></a>
 <?php } ?>
-<a href="mainpage.php"><u>Main page</u></a>
-<a href="admin.php"><u>Admin page</u></a>
+<a href="/cdsoto2/project2folder/mainpage.php"><u>Main page</u></a>
+<a href="/cdsoto2/project2folder/admin.php"><u>Admin page</u></a>
 </body>
 </html>
