@@ -32,7 +32,7 @@ if(!(isset($_SESSION['login']))) { ?>
 <?php } ?>
 <br><br>
 This is the main page. Just imagine that there is interesting stuff here.<br>
-    You can sign in if you want to, or click one of the links.
+    You can sign in/out if you want to, or click one of the links.
 <br><br>
 <?php // should only show sign out link if user is signed in
 if(isset($_SESSION['login'])) { ?>
