@@ -38,6 +38,8 @@ if(isset($_SESSION['username']))
 $query = "select * from account where user_name = '$username'";
 $result = $conn->query($query);
 
+mysqli_close($conn);
+
 // to print out user info
 echo "
     <table border='1'>
