@@ -13,7 +13,7 @@ if(isset($_POST['submit'])) {
         $username = $_POST['un'];
         $password = $_POST['pw'];
 
-        $conn = new mysqli("earth.cs.utep.edu", "cdsoto2", "Blahblah22", "cdsoto2");
+        $conn = new mysqli("earth.cs.utep.edu", "", "", "");
 
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_error());
