@@ -21,7 +21,7 @@ This is the page standard users and administrators have access to.
 You can sign out if you want to, or click one of the links.
 <br><br>
 User Info:<?php
-$conn = new mysqli("earth.cs.utep.edu", "cdsoto2", "Blahblah22", "cdsoto2");
+$conn = new mysqli("earth.cs.utep.edu", "", "", "");
 
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
