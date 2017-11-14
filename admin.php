@@ -6,7 +6,7 @@ if (!(isset($_SESSION['login']))) {
    ?><br><br><a href="mainpage.php">Main page</a>
 <?php die(); }
 
-$conn = new mysqli("earth.cs.utep.edu", "cdsoto2", "Blahblah22", "cdsoto2");
+$conn = new mysqli("earth.cs.utep.edu", "", "", "");
 
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
