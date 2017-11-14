@@ -10,7 +10,7 @@ if(isset($_POST['admin'])) {
 $date = date("Y-m-d");
 $rand = 'f9ADkfa9fjakAJF03';
 
-$conn = new mysqli("earth.cs.utep.edu", "cdsoto2", "Blahblah22", "cdsoto2");
+$conn = new mysqli("earth.cs.utep.edu", "", "", "");
 
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
